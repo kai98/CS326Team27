@@ -25,6 +25,8 @@ app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 
+app.use("/playground", express.static("playground/dist"));
+
 app.use(require("express-session")({
     secret:"This is best course",
     resave:false,
