@@ -28,7 +28,7 @@ router.post("/register", function(req, res) {
             return res.render("register",{"error":err.message});// err.message is internally generated message
         }
             passport.authenticate("local")(req,res, function(){
-                req.flash("success","Welcome to NeusialNetwork " + req.body.username +" !! ");  // req.body.username <=> user.username
+                req.flash("success","Welcome to NEUSUAL " + req.body.username +" >_< ");  // req.body.username <=> user.username
                 res.redirect("/campgrounds");
         });
     });
