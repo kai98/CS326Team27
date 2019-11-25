@@ -2,7 +2,8 @@ How to run the application :-
 1. Download the clone.
 2. Please have nodejs and mongodb installed locally on your machine.
 3. Open cmd and go to the directory having app.js.
-4. Run npm install && npm start. ( this will install the required npm modules).
+3.5. Go to playground/ and run `npm i && npm run build`
+4. Go to `..` and Run npm install && npm start. ( this will install the required npm modules).
 5. Setup mongodb on your system.
 6. Open new terminal and go to C:/mongodb/bin (or where your mongodb is installed).
 7. Run mongod. (This will start mongodb server).
