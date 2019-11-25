@@ -27,6 +27,7 @@ app.use(methodOverride("_method"));
 
 app.use("/playground", express.static("playground/dist"));
 
+
 app.use(require("express-session")({
     secret:"This is best course",
     resave:false,
@@ -62,5 +63,5 @@ app.use("/", indexRoutes);
 
 //app.listen(process.env.PORT,process.env.IP, function(){
 app.listen(3000,process.env.IP, function(){
-    console.log("Neusual Network is running");
+    console.log("Neusual-Network is running");
 });
