@@ -63,24 +63,24 @@ app.use("/", indexRoutes);
 
 //app.listen(process.env.PORT,process.env.IP, function(){
 
-https.createServer({
-    key: fs.readFileSync("../privkey.pem"),
-    cert: fs.readFileSync("../fullchain.pem")
-}, app).listen(3443, process.env.IP, function() {
-    console.log("https Neusual-Network is running");
-});
-
-var http = require('http');
-
-http.createServer(function (req, res) {
-    res.writeHead(301, {
-        "Location": "https://" + req.headers['host'] + req.url
-    });
-    res.end();
-}).listen(3000, function() {
-    console.log("Strict HTTPs is running");
-});
-
-// app.listen(3000,process.env.IP, function(){
-//     console.log("Neusual-Network is running");
+// https.createServer({
+//     key: fs.readFileSync("../privkey.pem"),
+//     cert: fs.readFileSync("../fullchain.pem")
+// }, app).listen(3443, process.env.IP, function() {
+//     console.log("https Neusual-Network is running");
 // });
+
+// var http = require('http');
+
+// http.createServer(function (req, res) {
+//     res.writeHead(301, {
+//         "Location": "https://" + req.headers['host'] + req.url
+//     });
+//     res.end();
+// }).listen(3000, function() {
+//     console.log("Strict HTTPs is running");
+// });
+
+app.listen(3000, process.env.IP, function(){
+    console.log("Neusual-Network is running");
+});
