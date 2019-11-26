@@ -64,8 +64,8 @@ app.use("/", indexRoutes);
 //app.listen(process.env.PORT,process.env.IP, function(){
 
 https.createServer({
-    key: fs.readFileSync("privkey.pem"),
-    cert: fs.readFileSync("fullchain.pem")
+    key: fs.readFileSync("../privkey.pem"),
+    cert: fs.readFileSync("../fullchain.pem")
 }, app).listen(3443, process.env.IP, function() {
     console.log("https Neusual-Network is running");
 });
