@@ -12,4 +12,4 @@ This is how we roll
 - Save training data to `mongodb`
 
 
-![We Roll](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/VegetableSpringRolls.JPG/1024px-VegetableSpringRolls.JPG)
+![We Roll](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/VegetableSpringRolls.JPG/1024px-VegetableSpringRolls.JPG "This is what we roll")
