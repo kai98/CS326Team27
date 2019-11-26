@@ -2,10 +2,10 @@
 <div class="container">
     <div class="row">    
         <h1 style="text-align:center;"> 
-              Add New Comments to <%= campground.name %>
+              Add New Comments to <%= neusualnetwork.name %>
         </h1>
         <div style="width: 30%; margin: 25px auto;">
-            <form action="/campgrounds/<%= campground._id %>/comments" method="post">
+            <form action="/neusualhome/<%= neusualnetwork._id %>/comments" method="post">
                 <div class="formgroup">
                     <input type="text" class="form-control" name="comment[text]" placeholder="text" width="50%"><br>
                 </div>
@@ -13,7 +13,7 @@
                     <button class="btn btn-lg btn-primary btn-block">Submit</button><br>
                 </div>
             </form>
-            <a href="/campgrounds">Go back</a>
+            <a href="/neusualhome">Go back</a>
         </div>
     </div>
 </div>

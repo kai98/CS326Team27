@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 
 //SCHEMA SETUP
-var campgroundSchema = new mongoose.Schema({
+var neusualnetworkSchema = new mongoose.Schema({
     name:String,
     price:String,
     image:String,
@@ -21,6 +21,6 @@ var campgroundSchema = new mongoose.Schema({
     ]
 }); 
 
-var Campground = mongoose.model("Campground", campgroundSchema);
+var Neusualnetwork = mongoose.model("Neusualnetwork", neusualnetworkSchema);
 
-module.exports = Campground;
+module.exports = Neusualnetwork;

@@ -5,7 +5,7 @@ var express    = require("express"),
     passport   = require("passport"),
 localStrategy  = require("passport-local"),
     flash      = require("connect-flash"),
-    Campground = require("./models/campground"),
+    Neusualnetwork = require("./models/neusualnetwork"),
 methodOverride = require("method-override"),
     Comment    = require("./models/comment"),
     User       = require("./models/user"),
@@ -13,12 +13,11 @@ methodOverride = require("method-override"),
 
 //requiring routes    
 var commentRoutes     = require("./routes/comments"),
-    campgroundRoutes  = require("./routes/campgrounds"),
+    neusualnetworkRoutes  = require("./routes/neusualhome"),
     indexRoutes       = require("./routes/index");
 
-mongoose.connect("mongodb://localhost/yelp_db");
+mongoose.connect("mongodb://localhost/neusual_db");
 
-//mongoose.connect("mongodb://yelpcampdb:password@ds147789.mlab.com:47789/yelpcamp");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
@@ -50,15 +49,15 @@ app.use(function(req, res, next){     // used for showing signed in as and wheth
 });
 
 //seedDB();
-/*var campgrounds = [
+/*var neusualnetworks = [
             {name :"Heaven's Overpass", image :"https://farm5.staticflickr.com/4113/5193321637_f6cd908e17.jpg"},
             {name :"Hanging Rock", image :"https://images.unsplash.com/photo-1445308394109-4ec2920981b1?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=7de12efa9efd5d176511b6caf1c99e5a"},
             {name :"Green Paddock", image:"https://images.unsplash.com/photo-1434987215074-1caeadb28cf8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=a9a51ee15143440a3a518cae1561f2be"},
             {name :"Haiti", image:"https://farm2.staticflickr.com/1274/4670974422_ec49d65ab2.jpg"}
         ]  */ 
 
-app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/neusualhome", neusualnetworkRoutes);
+app.use("/neusualhome/:id/comments", commentRoutes);
 app.use("/", indexRoutes);
 
 //app.listen(process.env.PORT,process.env.IP, function(){

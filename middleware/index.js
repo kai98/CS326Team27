@@ -1,19 +1,19 @@
 var middlewareObj ={};
-var Campground = require("../models/campground");
+var Neusualnetwork = require("../models/neusualnetwork");
 var Comment = require("../models/comment");
-middlewareObj.checkCampgroundOwnership = function(req,res,next){
+middlewareObj.checkNeusualnetworkOwnership = function(req,res,next){
     if(req.isAuthenticated()){
-        Campground.findById(req.params.id, function(err,foundCampground){
+        Neusualnetwork.findById(req.params.id, function(err,foundNeusualnetwork){
             if(err){
-                req.flash("error","Campground not found");
+                req.flash("error","Neusualnetwork not found");
                 res.redirect("back");
             }else{
-                //does user own campground
-                console.log(foundCampground.author.id); // this id is mongoose object
+                //does user own neusualnetwork
+                console.log(foundNeusualnetwork.author.id); // this id is mongoose object
                 console.log(req.user._id); // this is is string
-                var authorId = foundCampground.author.id.toString();
+                var authorId = foundNeusualnetwork.author.id.toString();
                 var userId = req.user._id.toString();
-                //does user own the campground
+                //does user own the neusualnetwork
                 if(authorId === userId){
                     next();
                 }else{
