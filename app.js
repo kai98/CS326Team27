@@ -22,7 +22,7 @@ mongoose.connect("mongodb://localhost/neusual_db");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
-app.set('views', path.join(__dirname, './homepage/views'));
+app.set('views', './homepage/views');
 app.use(express.static(__dirname + "/homepage/public"));
 app.use(methodOverride("_method"));
 
