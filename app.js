@@ -9,7 +9,9 @@ localStrategy  = require("passport-local"),
 methodOverride = require("method-override"),
     Comment    = require("./models/comment"),
     User       = require("./models/user"),
-    seedDB     = require("./seeds");
+    seedDB     = require("./seeds"),
+    https      = require("https"),
+    fs         = require("fs");
 
 //requiring routes    
 var commentRoutes     = require("./routes/comments"),
@@ -17,7 +19,6 @@ var commentRoutes     = require("./routes/comments"),
     indexRoutes       = require("./routes/index");
 
 mongoose.connect("mongodb://localhost/neusual_db");
-
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
@@ -61,6 +62,25 @@ app.use("/neusualhome/:id/comments", commentRoutes);
 app.use("/", indexRoutes);
 
 //app.listen(process.env.PORT,process.env.IP, function(){
-app.listen(3000,process.env.IP, function(){
-    console.log("Neusual-Network is running");
+
+https.createServer({
+    key: fs.readFileSync("privkey.pem"),
+    cert: fs.readFileSync("fullchain.pem")
+}, app).listen(3443, process.env.IP, function() {
+    console.log("https Neusual-Network is running");
 });
+
+var http = require('http');
+
+http.createServer(function (req, res) {
+    res.writeHead(301, {
+        "Location": "https://" + req.headers['host'] + req.url
+    });
+    res.end();
+}).listen(3000, function() {
+    console.log("Strict HTTPs is running");
+});
+
+// app.listen(3000,process.env.IP, function(){
+//     console.log("Neusual-Network is running");
+// });
