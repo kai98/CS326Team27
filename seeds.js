@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
-var Neusualnetwork = require("./models/neusualnetwork");
-var Comment = require("./models/comment");
+var Neusualnetwork = require("./homepage/models/neusualnetwork");
+var Comment = require("./homepage/models/comment");
 
 var data=[
     {
