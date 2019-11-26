@@ -8,7 +8,7 @@ This is how we roll
 - Run on local ubuntu server
 - Create domain `network.neusual.com` with AWS `route53` and route to NOIP for dynamic IP
 - Rename files and references to Neusual
-- TLS Certificate with `letsencrypt.org`
+- TLS Certificate with `letsencrypt.org` and use strict HTTPS
 - Put playground into Neusual folder
 ### Work in progress
 - Turn playground into `ejs`
