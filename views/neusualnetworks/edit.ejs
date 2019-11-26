@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">    
+        <h1 style="text-align:center;"> 
+            Edit <%= neusualnetwork.name %>
+        </h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/neusualhome/<%= neusualnetwork._id %>?_method=PUT" method="POST">
+                <div class="formgroup">
+                    <input type="text" class="form-control" name="neusualnetwork[name]" value="<%= neusualnetwork.name %>" width="50%"><br>
+                </div>
+                <div class="formgroup">
+                    <input type="number" class="form-control" name="neusualnetwork[price]" value="<%= neusualnetwork.price %>" min="0.01" step="0.01" width="50%"><br>
+                </div>
+                <div class="formgroup">
+                    <input type="text" class="form-control" name="neusualnetwork[image]" value="<%= neusualnetwork.image %>" width="50%"><br>
+                </div>
+                 <div class="formgroup">
+                    <input type="text" class="form-control" name="neusualnetwork[description]" value="<%= neusualnetwork.description %>" width="50%"><br>
+                </div>
+                <div class="formgroup">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button><br>
+                </div>
+            </form>
+            <a href="/neusualhome">Go back</a>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
