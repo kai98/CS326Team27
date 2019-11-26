@@ -14,18 +14,18 @@ methodOverride = require("method-override"),
     fs         = require("fs");
 
 //requiring routes    
-var commentRoutes     = require("./routes/comments"),
-    neusualnetworkRoutes  = require("./routes/neusualhome"),
-    indexRoutes       = require("./routes/index");
+var commentRoutes     = require("./homepage/routes/comments"),
+    neusualnetworkRoutes  = require("./homepage/routes/neusualhome"),
+    indexRoutes       = require("./homepage/routes/index");
 
 mongoose.connect("mongodb://localhost/neusual_db");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/homepage/public"));
 app.use(methodOverride("_method"));
 
-app.use("/playground", express.static("../playground/dist"));
+app.use("/playground", express.static("./playground/dist"));
 
 
 app.use(require("express-session")({
