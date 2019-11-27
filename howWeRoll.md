@@ -10,6 +10,9 @@ This is how we roll
 - Rename files and references to Neusual
 - TLS Certificate with `letsencrypt.org` and use strict HTTPS
 - Put playground into Neusual folder
+- Prototyping using Goorm.io
+
+
 ### Work in progress
 - Turn playground into `ejs`
 - Put it on AWS `EC2`
