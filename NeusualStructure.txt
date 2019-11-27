@@ -4,7 +4,7 @@ neusual
 |-- neusual network
 	|-- homepage
 	|-- playground
-	|-- playground pro
+	|-- playPro
 	|-- tensorflow.js models
 		|-- image classification
 		|-- object detection
