@@ -16,7 +16,8 @@ methodOverride = require("method-override"),
 //requiring routes    
 var commentRoutes     = require("./homepage/routes/comments"),
     neusualnetworkRoutes  = require("./homepage/routes/neusualhome"),
-    indexRoutes       = require("./homepage/routes/index");
+    indexRoutes       = require("./homepage/routes/index"),
+    playgroundRoutes = require("./playground/routes/playground");
 
 mongoose.connect("mongodb://localhost/neusual_db");
 
@@ -26,8 +27,7 @@ app.set('views', './homepage/views');
 app.use(express.static(__dirname + "/homepage/public"));
 app.use(methodOverride("_method"));
 
-app.use("/playground", express.static("./playground/dist"));
-
+// app.use("/playground", express.static("./playground/dist"));
 
 app.use(require("express-session")({
     secret:"This is best course",
@@ -61,6 +61,8 @@ app.use(function(req, res, next){     // used for showing signed in as and wheth
 app.use("/neusualhome", neusualnetworkRoutes);
 app.use("/neusualhome/:id/comments", commentRoutes);
 app.use("/", indexRoutes);
+app.use("/playground", playgroundRoutes)
+
 
 //app.listen(process.env.PORT,process.env.IP, function(){
 
