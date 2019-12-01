@@ -36,6 +36,9 @@ router.post("/",middleware.isLoggedIn, function(req,res){
 router.get("/new", middleware.isLoggedIn, function(req, res) {
     res.render("neusualnetworks/new");
 });
+router.get("/test", middleware.isLoggedIn, function(req, res) {
+    res.render("/neusualhome");
+});
 //SHOW more info about one neusualnetwork
 router.get("/:id", function(req, res) {
     Neusualnetwork.findById(req.params.id).populate("comments").exec(function(err,showNeusualnetwork){
