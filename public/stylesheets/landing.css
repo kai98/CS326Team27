@@ -1,84 +1,94 @@
-body{
-    background-color:#000;
-}
-#landing-header {
-  z-index: 1;        /* 1 means coming outwards . z index is used only when position is relative*/
-  position: relative;
-  text-align: center;
-  padding-top: 40vh;  /* vh is view height */
-}
-#landing-footer {
-  z-index: 1;        /* 1 means coming outwards . z index is used only when position is relative*/
-  position: relative;
-  text-align: center;
-  margin-top: auto;
-  padding-top: 40vh;  /* vh is view height */
-}
-#landing-header h1 {
-  color: #fff;
-}
-.slideshow { 
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;         /* ensures background images are behind the other content(text ,button) */
-  list-style: none ;  /* removes bullet points */
+* {
   margin: 0;
   padding: 0;
-} 
-.slideshow li { 
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: #fff;
+  height: 100vh;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+.container {
   width: 100%;
   height: 100%;
-  position: absolute;
+  /* CSS Smooth Scroll */
+  overflow-y: scroll; 
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+.lead {
+  font-size: 1.5rem;
+}
+
+.navbar {
+  position: fixed;
   top: 0;
-  left: 0;
-  background-size: cover;
-  background-position: 50% 50%;    /* will center the image perfectly on page */
-  background-repeat: no-repeat;
-  opacity: 0;            /* gives fading effect and sets opacity slowly to 1 */
-  z-index: 0;
-  animation: imageAnimation 25s linear infinite;  /* lasts for 50s, linear means animation speed will be same from starting to end */
-}                                                 /* infinite makes animation run forever. slideshow doesnt end */
-
-.slideshow li:nth-child(1) { 
-  background-image: url(https://i.imgur.com/hojX93F.jpg) 
-}
-.slideshow li:nth-child(2) { 
-  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
-  animation-delay: 10s; 
-}
-.slideshow li:nth-child(3) { 
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
-  animation-delay: 20s; 
-}
-.slideshow li:nth-child(4) { 
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
-  animation-delay: 30s; 
-}
-.slideshow li:nth-child(5) { 
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
-  animation-delay: 40s; 
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background: rgba(0,0,0,0.7);
 }
 
-@keyframes imageAnimation { 
-  0% { 
-    opacity: 0; 
-    animation-timing-function: ease-in;  /* gives smooth transition as it moves from opacity 0 to 1 */
-  }
-  10% {
-    opacity: 1;
-    animation-timing-function: ease-out;
-  }
-  20% {
-    opacity: 1
-  }
-  30% {
-    opacity: 0
-  }
+.navbar ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
 }
-/* Older browser support - .no-cssanimations class added by modernizr */
-.no-cssanimations .slideshow li {
-    opacity: 1;
+
+.navbar ul li {
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #f4f4f4;
+}
+
+.navbar ul li a:hover {
+  color: skyblue;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+ 
+  /* Scroll Snap */
+  scroll-snap-align: center;
+}
+
+section h1 {
+  font-size: 4rem;
+}
+
+/* Section Images */
+section#home {
+  justify-content: center;
+  background: url('https://images.unsplash.com/photo-1575496294849-dd4c0de90ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+}
+
+section#about {
+  padding-top: 10vh;
+}
+
+section#service {
+  padding-top: 10vh;
+  
+}
+
+section#contact {
+  padding-top: 10vh;
 }
