@@ -29,6 +29,8 @@ import {Example2D, shuffle} from "./dataset";
 import {AppendingLineChart} from "./linechart";
 import * as d3 from 'd3';
 
+(window as any).test = "wow";
+
 let mainWidth;
 
 // More scrolling
@@ -94,6 +96,10 @@ class Player {
   private timerIndex = 0;
   private isPlaying = false;
   private callback: (isPlaying: boolean) => void = null;
+
+  getIsPlaying() {
+    return this.isPlaying;
+  }
 
   /** Plays/pauses the player. */
   playOrPause() {
@@ -186,6 +192,9 @@ function makeGUI() {
     // Change the button's content.
     userHasInteracted();
     player.playOrPause();
+    if (!player.getIsPlaying()) {
+
+    }
   });
 
   player.onPlayPause(isPlaying => {

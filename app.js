@@ -23,8 +23,8 @@ mongoose.connect("mongodb://localhost/neusual_db");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
-app.set('views', './homepage/views');
-app.use(express.static(__dirname + "/homepage/public"));
+app.set('views', './views');
+app.use("/static", express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 
 // app.use("/playground", express.static("./playground/dist"));
