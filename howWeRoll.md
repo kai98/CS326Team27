@@ -11,6 +11,7 @@ This is how we roll
 - TLS Certificate with `letsencrypt.org` and use strict HTTPS
 - Put playground into Neusual folder
 - Prototyping using Goorm.io
+- We used passport.js for Auth
 
 
 ### Work in progress

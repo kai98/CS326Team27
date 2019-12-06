@@ -1,18 +1,18 @@
 
 neusual
 
-|-- neusual network
-	|-- homepage
-	|-- playground
-	|-- playground pro
-	|-- tensorflow.js models
+|-- neusual-network
+	|-- homepage 
+	|-- playground [ with basic upload/ download and mongodb func ]
+	|-- playPro [ tensorflow.js inside, UI redesign ]
+	|-- tensorflow.js demo models
 		|-- image classification
 		|-- object detection
 		|-- body segmentation
 		|-- Pose estimation....
 	
-|-- neusual sophon
+|-- neusual sophon [ project: Sophon ]
 
-|-- neusual mail service
+|-- neusual mail service [ mail@neusual.com ]
 
 |-- neusual drive...
