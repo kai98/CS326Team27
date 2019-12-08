@@ -33,6 +33,10 @@ import * as d3 from 'd3';
 
 let mainWidth;
 
+let maxNeuronNum = 16;
+
+let maxLayerNum = 10;
+
 // More scrolling
 d3.select(".more button").on("click", function() {
   let position = 800;
@@ -72,6 +76,7 @@ let INPUTS: {[name: string]: InputFeature} = {
   "xTimesY": {f: (x, y) => x * y, label: "X_1X_2"},
   "sinX": {f: (x, y) => Math.sin(x), label: "sin(X_1)"},
   "sinY": {f: (x, y) => Math.sin(y), label: "sin(X_2)"},
+  "new: atan2": {f: (x, y) => Math.atan2(x,y), label: "atan2(X_1,X_2)"},
 };
 
 let HIDABLE_CONTROLS = [
@@ -254,7 +259,7 @@ function makeGUI() {
     .classed("selected", true);
 
   d3.select("#add-layers").on("click", () => {
-    if (state.numHiddenLayers >= 6) {
+    if (state.numHiddenLayers >= maxLayerNum) {
       return;
     }
     state.networkShape[state.numHiddenLayers] = 2;
@@ -679,7 +684,7 @@ function addPlusMinusControl(x: number, layerIdx: number) {
       .attr("class", "mdl-button mdl-js-button mdl-button--icon")
       .on("click", () => {
         let numNeurons = state.networkShape[i];
-        if (numNeurons >= 8) {
+        if (numNeurons >= maxNeuronNum) {
           return;
         }
         state.networkShape[i]++;
