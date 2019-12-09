@@ -59,8 +59,10 @@ body {
 
 
 #navdiv {
-    margin-left: 70%;
+    position: fixed;
+    right: 0;
 }
+
 
 section {
   display: flex;
