@@ -4,26 +4,35 @@
         <div class="col-md-3">
             <p class="lead">NEUSUAL</p>
             <div class="list-group">
-                <li class="list-group-item active">Item 1</li>
+                <li class="list-group-item ">Submitted By <%= neusualnetwork.author.username %> </li>
+<!--
+
                 <li class="list-group-item">Item 2</li>
                 <li class="list-group-item">Item 3</li>
+-->
+                <img class="img-responsive" src="<%= neusualnetwork.image %>" >
+
             </div>
         </div>
         <div class="col-md-9">
             <div class="thumbnail">
-                <img class="img-responsive" src="<%= neusualnetwork.image %>">
+
+<!--
                 <div class="caption-full">
                     <h4 class="pull-right">$<%= neusualnetwork.price %>/night</h4>
                 </div>
+-->
                 <h3>
                     <a><%= neusualnetwork.name %></a>
                 </h3>
                 <p>
                     <%= neusualnetwork.description %>
                 </p>
+<!--
                 <p>
                    <em> Submitted By <%= neusualnetwork.author.username %> </em>  
                 </p>
+-->
                 <% if(currentUser && neusualnetwork.author.id.equals(currentUser._id)){ %>    <% /*currentUser is coming from app.js. we also check whether currentUser is true or not */ %>
                     <a class="btn btn-warning" href="/neusualhome/<%= neusualnetwork._id %>/edit">Edit</a>
                     <form id="delete-form" action="/neusualhome/<%= neusualnetwork._id %>?_method=DELETE" method="POST">

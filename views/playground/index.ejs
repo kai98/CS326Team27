@@ -54,7 +54,6 @@ limitations under the License.
   <!-- <header>
     <h1 class="l--page">Tinker With a <b>Neural Network</b> <span class="optional">Right Here </span>in Your Browser.<br>Don’t Worry, You Can’t Break It. We Promise.</h1>
   </header> -->
-  <a href="/neusualhome/test" class="btn btn-success">save</a>
   <!-- Top Controls -->
   <div id="top-controls">
     <div class="container l--page">
@@ -261,9 +260,11 @@ limitations under the License.
       <div class="bracket"></div>
     </div>
 
+
     <!-- Output Column -->
     <div class="column output">
       <h4>Output</h4>
+
       <div class="metrics">
         <div class="output-stats ui-percTrainData">
           <span>Test loss</span>
@@ -275,11 +276,39 @@ limitations under the License.
         </div>
         <div id="linechart"></div>
       </div>
-      <div id="heatmap"></div>
+    <div id="heatmap"></div>
+        
+<!--        form-->
+<!--    <div class="row">    -->
+        <div>
+            <form action="/neusualhome" method="post">
+            <form action="/playground">
+                <div class="formgroup">
+                    <input type="text" class="form-control" name="addnew" value ="New Network" width="50%"><br>
+                </div>
+                <div class="formgroup">
+                    <input type="text" class="form-control" name="testLoss" value = loss-test.value width="50%"><br>
+                </div>
+                <div class="formgroup">
+                    <input type="text" class="form-control" name="image" placeholder="http://playground.tensorflow.org/preview.png" width="50%" value = "http://playground.tensorflow.org/preview.png"><br>
+                </div>
+                 <div class="formgroup">
+                    <input type="text" class="form-control" value="description" placeholder="description" width="50%"><br>
+                </div>
+                <div class="formgroup">
+                    <button class="btn btn-lg btn-primary btn-block">Save Model</button><br>
+                </div>
+            </form>
+            <a href="/neusualhome">Go back</a>
+            </form>
+    </div>
+<!--</div>-->
+
+<!--
       <div style="float:left;margin-top:20px">
         <div style="display:flex; align-items:center;">
 
-          <!-- Gradient color scale -->
+           Gradient color scale 
           <div class="label" style="width:105px; margin-right: 10px">
             Colors shows data, neuron and weight values.
           </div>
@@ -309,8 +338,41 @@ limitations under the License.
         </div>
       </div>
     </div>
+-->
 
   </div>
+</div>
+        
+<!--
+        
+ <div class="container">
+    <div class="row">    
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/neusualhome" method="post">
+            <form action="/playground">
+                <div class="formgroup">
+                    <input type="text" class="form-control" name="addnew" value ="New Network" width="50%"><br>
+                </div>
+                <div class="formgroup">
+                    <input type="text" class="form-control" name="testLoss" value = n1 width="50%"><br>
+                </div>
+                <div class="formgroup">
+                    <input type="text" class="form-control" name="image" placeholder="http://playground.tensorflow.org/preview.png" width="50%" value = "http://playground.tensorflow.org/preview.png"><br>
+                </div>
+                 <div class="formgroup">
+                    <input type="text" class="form-control" value="description" placeholder="description" width="50%"><br>
+                </div>
+                <div class="formgroup">
+                    <button class="btn btn-lg btn-primary btn-block">Save Model</button><br>
+                </div>
+            </form>
+            <a href="/neusualhome">Go back</a>
+            </form>
+    </div>
+</div>
+-->
+
+
 
   <!-- More -->
   <!-- <div class="more"> -->
@@ -399,5 +461,8 @@ limitations under the License.
   <script src="/static/playground/bundle.js"></script>
   <!-- Google analytics -->
   <script src="/static/playground/analytics.js"></script>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
