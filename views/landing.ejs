@@ -9,14 +9,24 @@
     </head>
     <body>
         <div class="container">
-          <nav class="navbar">
-              <ul>
-                  <li><a href="#home">Home</a></li>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#service">Service</a></li>
-                  <li><a href="#contact">Contact</a></li>
+          <nav class="navbar navbar-inverse">
+            
+              
+                <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span> Neusual Network</a>
+              
+              <div class="collapse navbar-collapse" id="navdiv">
+                <ul class="nav navbar-nav navbar-right">
+                  <% if(!currentUser){ %>
+                  <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+                  <% } else { %>
+                    <li><a href="#">Signed in as <%= currentUser.username %></a></li>
+                  <li><a href="/logout">Log Out</a></li>
+                  <% } %>
                 </ul>
-              </nav>
+              </div>
+            
+          </nav>
           <section id="home">
             <h1>NEUSUAL</h1>
             <p class="lead"><--To Be Continued</p>
